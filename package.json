@@ -1,0 +1,27 @@
+{
+  "name": "useful-info",
+  "version": "1.0.0",
+  "description": "A series of documents in MD format to aid the autodidacts finding relevant resources",
+  "main": " ",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaxolotl-Didactic-Lab/useful-info.git"
+  },
+  "keywords": [
+    "ECMAScript",
+    "ES5",
+    "ES6",
+    "ES2015",
+    "JavaScript",
+    "JS"
+  ],
+  "author": "Jaxolotl ( Javier Valderrama )",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jaxolotl-Didactic-Lab/useful-info/issues"
+  },
+  "homepage": "https://github.com/Jaxolotl-Didactic-Lab/useful-info#readme"
+}
