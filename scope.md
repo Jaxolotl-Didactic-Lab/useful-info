@@ -322,3 +322,4 @@ with (Math){x = cos(2)};
 
 # Other
 - A great analysis of a memory leak example related to inacurate use of closures [See here](http://point.davidglasser.net/2013/06/27/surprising-javascript-memory-leak.html)
+- The best and more detailed book I've ever read about scope and closures in JS [You Don't Know JS: Scope & Closures](https://github.com/getify/You-Dont-Know-JS/tree/master/scope%20%26%20closures)
