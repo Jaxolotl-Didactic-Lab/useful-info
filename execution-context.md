@@ -16,7 +16,7 @@
 ## Execution Stack
 
 - Starts with global
-- Usually LIFO but not necessary
+- Usually LIFO but not necessarily
     > Evaluation of code by the running execution context may be suspended at various points defined within this specification. Once the running execution context has been suspended a different execution context may become the running execution context and commence evaluating its code. At some later time a suspended execution context may again become the running execution context and continue evaluating its code at the point where it had previously been suspended. Transition of the running execution context status among execution contexts usually occurs in stack-like last-in/first-out manner. However, some ECMAScript features (ES6) require **non-LIFO transitions of the running execution context**.
 
     Anyone in the audience wants to bring an example of non-LIFO activation record transition feature?
