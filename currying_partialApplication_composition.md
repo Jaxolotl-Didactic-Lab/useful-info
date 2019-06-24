@@ -1,6 +1,5 @@
 # Function/code factorization through _Currying_, _Partial application_ or _First-class composition_
 
-
 ## Currying
 
 > In mathematics and computer science, currying is the technique of translating the evaluation of a function that takes multiple arguments into evaluating a sequence of functions, each with a single argument. For example, a function that takes two arguments, one from X and one from Y, and produces outputs in Z, by currying is translated into a function that takes a single argument from X and produces as outputs functions from Y to Z. Currying is related to, but not the same as, partial application. [Wikipedia](https://en.wikipedia.org/wiki/Currying)
@@ -31,6 +30,70 @@ function add_curry(x) { // :P
   }
 }
 add_curry(3)(4); // 7
+
+```
+
+```javascript
+
+const message = 'Today, [date], [user] says [salutation]';
+const message2 = 'Hellow [user] you have to say [salutation] before the end of [date]';
+const date = new Date();
+const user = { name: 'Javier', surname: 'Valderrama', nickName: 'jax' };
+const salutation = 'hi';
+
+/**
+ * Not Curried
+ *
+ * @param {String} message
+ * @param {Object} date
+ * @param {Object} user
+ * @param {String} salutation
+ * @returns {String}
+ */
+function formatMessage (message, date, user, salutation) {
+
+    return message.replace('[date]', date.toLocaleDateString())
+        .replace('[user]', user.nickName.toUpperCase())
+        .replace('[salutation]', salutation.replace(/hi/i, 'howdy'))
+
+}
+
+formatMessage(
+    message,
+    date,
+    user,
+    salutation
+) // > "Today, 24/6/2019, JAX says howdy"
+
+/**
+ * Curried
+ *
+ * @param {String} salutation
+ * @param {Object} user
+ * @param {Object} date
+ * @param {String} message
+ *
+ * @returns {Function|String}
+ */
+let formatMessageCurried = (salutation) => (user) => (date) => (message) => {
+    return message.replace('[date]', date.toLocaleDateString())
+        .replace('[user]', user.nickName.toUpperCase())
+        .replace('[salutation]', salutation.replace(/hi/i, 'howdy'))
+
+}
+
+/**
+ * Not very interesting
+ */
+formatMessageCurried(salutation)(user)(date)(message) // > "Today, 24/6/2019, JAX says howdy"
+
+/**
+ * This is really interesting
+ */
+const formatMsgWithSalutationUserAndDate = formatMessageCurried(salutation)(user)(date);
+
+formatMsgWithSalutationUserAndDate(message) // > "Today, 24/6/2019, JAX says howdy"
+formatMsgWithSalutationUserAndDate(message2) // > "Hellow JAX you have to say howdy before the end of 24/6/2019"
 
 ```
 
