@@ -74,7 +74,7 @@ c = multiply(20, 30);
 
 ```
 
-### 1 - Global context creation 
+### 1 - Global context creation
 
 ```javascript
 // (PSEUDO-CODE)
