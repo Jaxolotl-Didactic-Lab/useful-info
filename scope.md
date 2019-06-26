@@ -163,8 +163,8 @@ setTimeout(() => console.log(d), 3000); // -> {x: 3}
 ```javascript
 
 /**
- * How many LHS look-us can you see?
- * How many RHS look-us can you see?
+ * How many LHS look-ups can you see?
+ * How many RHS look-ups can you see?
  */
 
 function speakToMe(input) {
